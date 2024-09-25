@@ -1,0 +1,201 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Overall body styling */
+body {
+  background: #1b1b1d; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  padding: 20px;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px;
+  background: #2c2f33;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-panel,
+.results-panel {
+  padding: 30px;
+  background: #3a3d42; /* Slightly lighter dark color */
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Panel */
+.input-panel {
+  flex: 1;
+  max-width: 38%; /* Use half the width on large screens */
+}
+
+.input-panel h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.input-panel label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.form-control {
+  width: 100%;
+  padding: 2%;
+
+  margin-bottom: 20px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  background: #26292c;
+  color: #fff;
+  transition: border 0.3s ease;
+}
+
+.input-panel input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  background: #26292c;
+  border-radius: 8px;
+  color: #fff;
+  transition: border 0.3s ease;
+}
+
+.input-panel input:focus {
+  border: 1px solid #4a90e2;
+  outline: none;
+}
+
+.submit-btn {
+  padding: 12px 24px;
+  background: #4a90e2; /* Blue accent */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #367bb7;
+}
+
+/* Results Panel */
+.results-panel {
+  flex: 1;
+  max-width: 58%; /* Use half the width on large screens */
+  text-align: center;
+}
+
+.results-panel h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.results-status {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.status-box {
+  flex: 1;
+  background: #2c2f33;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.status-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+.status-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #4a90e2; /* Blue accent for the heading */
+  transition: color 0.3s ease;
+}
+
+.status-box span,
+.status-box-value {
+  display: block;
+  font-size: 30px; /* Make the value bigger */
+  font-weight: bold;
+  color: #ff6b6b; /* Different color for emphasis (bright red-orange) */
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  90% {
+    color: #ff6b6b; /* Color changes */
+    transform: scale(1);
+  }
+  50% {
+    color: #ffa07a; /* Lighter shade during pulse */
+    transform: scale(1.02);
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 900px) {
+  .dashboard-container {
+    flex-direction: column;
+    max-width: 800px;
+  }
+
+  .input-panel,
+  .results-panel {
+    max-width: 100%; /* Use full width on smaller screens */
+    margin: 5px 0;
+  }
+
+  .results-status {
+    flex-direction: column;
+  }
+
+  .status-box {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .status-box span {
+    font-size: 24px;
+  }
+
+  .input-panel label,
+  .input-panel input {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
